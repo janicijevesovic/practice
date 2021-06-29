@@ -1,18 +1,18 @@
 [
     {
         "name": "cabbage",
-        "number": "5"
+        "number": 5
     },
     {
         "name": "spinach",
-        "number": "7"
+        "number": 7
     },
     {
         "name": "tomato",
-        "number": "7"
+        "number": 7
     },
     {
         "name": "olive",
-        "number": "7"
+        "number": 7
     }
 ]
