@@ -1,18 +1,19 @@
-class Student {
-    constructor(jmbg, ime, prezime, nizOcena, prosecnaOcena) {
+export class Student {
+    constructor(jmbg, ime, prezime, nizOcena) {
         this.jmbg = jmbg;
         this.ime = ime;
         this.prezime = prezime;
         this.nizOcena = nizOcena;
+        this.prosecnaOcena = this.prosecnaOcena();
     }
 
     // Seteri
     set jmbg(jmbg) {
-        if (typeof jmbg == "number" && jmbg.toString().length == 13) {
+        if (typeof jmbg == "string" && jmbg.length == 13) {
             this._jmbg = jmbg;
         }
         else {
-            alert("JMBG is a 13 character number");
+            alert("JMBG is a 13 character string");
         }
     }
 
@@ -54,5 +55,18 @@ class Student {
 
     get nizOcena() {
         return this._nizOcena;
+    }
+
+    // Metode
+    prosecnaOcena() {
+        let sum = 0;
+        this.nizOcena.forEach(ocena => {
+            sum += ocena;
+        });
+        return sum / this.nizOcena.length;
+    }
+
+    ispis() {
+        console.log(this.jmbg, this.ime, this.prezime, this.nizOcena, this.prosecnaOcena);
     }
 }
